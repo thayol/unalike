@@ -1,0 +1,18 @@
+<div class="background-color card-osu card-osu-topless">
+	<div class="card-title">
+		<h3 class="cover-image song-info" style="padding:30px 50px;background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('[[ COVER_IMAGE ]]');background-size:cover;">
+			[[ SONG_INFO ]]
+		</h3>
+	</div>
+	<div style="margin-top:25px;">
+		<div style="display:flex;flex-flow: row wrap;justify-content:flex-end;">
+			<p style="flex: 1 0 auto;min-width:200px;">[[ STATE ]]</p>
+			<button onclick="hiddenFunctionClick(this, 'action/?invite&target=[[ CHANNEL ]]', 1)" class="button-osu button-osu-management button-positive" style="margin:0 10px 0 0;flex:0 0 0;min-width:140px;" putDisabledHere>
+				<div class="button-symbol">📤</div>
+				<div class="button-label">Invite</div>
+			</button>
+			<button onclick="hiddenFunctionClick(this, 'action/?close&target=[[ CHANNEL ]]', 3)" class="button-osu button-osu-round button-negative" style="flex: 0 0 0;" putDisabledHere>❌</button>
+		</div>
+	</div>
+	<div>[[ PLAYERS ]]</div>
+</div>
