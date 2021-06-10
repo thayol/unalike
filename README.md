@@ -8,6 +8,8 @@ I know it's a bit messy but I wasn't planning on releasing the code. Initially, 
 
 The plan was to make it Python only, as it has built-in support for poviding a dedicated web server service, but in the end I fell back to my well known PHP knowledge.
 
+By the way, I'm [Thayol][thayol-osu-url], feel free to ask me any questions anywhere.
+
 
 ## Features
 
@@ -73,3 +75,4 @@ The plan was to make it Python only, as it has built-in support for poviding a d
 
 [Unalike-URL]: http://zovguran.net/Unalike/
 [osu-bot-account-forum]: https://osu.ppy.sh/wiki/en/Bot_account
+[thayol-osu-url]: https://osu.ppy.sh/users/12416594
