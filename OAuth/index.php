@@ -18,7 +18,7 @@ else if (empty($_GET["code"]))
 
 $code = $_GET["code"];
 include "../api_key.php";
-$final_uri = "http://zovguran.net/Unalike/";
+$final_uri = $unalike_root_public;
 
 $postdata = array(
 	"client_id" => $client_id,
