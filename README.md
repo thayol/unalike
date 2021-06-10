@@ -24,7 +24,6 @@ The plan was to make it Python only, as it has built-in support for poviding a d
 
 *\* Score v2 might break a lobby.*
 
-
 ## Requirements
 
 - A dedicated web service (Such as IIS, Apache, or XAMPP.)
@@ -46,7 +45,31 @@ The plan was to make it Python only, as it has built-in support for poviding a d
 1. Start start.ps1 with powershell.
 2. Start your web service if it is stopped.
 
+*(If it's your first time running start.ps1, the service will start automatically.)*
 
+
+## Usage
+
+1. Open the web page you deployed in a web browser.
+2. Log in with you osu! account.
+3. Press the "Start" button if Unalike is offline.
+4. Press the "New lobby" button.
+5. Make sure your osu! client is open and connected to Bancho.
+6. Press the "Invite" button next of the newly created lobby.
+7. Press F9 in your osu! client to open Bancho, then click the invite link received.
+8. Wait for Unalike to give you the Host.
+9. Pick a map, then ready up to start playing.
+10. After playing, don't forget to press the "Shut down" button to save resources.
+
+*(Optionally, you can replace step six with pressing the "Send invites" button.)*
+
+## Known Bugs (or rather Features)
+
+- When multiple people join the lobby, always the newly joined person gets the Host.
+- If the map is changed in two or more lobbies simultaneously, some of the lobbies desync.
+- You can play by yourself...
+- When the lobbies are created, there is no map selected. When the joined user receives the host, it counts as a map change, so every other lobby will sync to the new mapset.
+- If someone presses Escape early but they have played a map in the last round, they will receive a score with plus one point compared to the last run. (This is a bug in Bancho, which was last checked 2021-06-10)
 
 [Unalike-URL]: http://zovguran.net/Unalike/
 [osu-bot-account-forum]: https://osu.ppy.sh/wiki/en/Bot_account
