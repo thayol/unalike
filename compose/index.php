@@ -253,6 +253,11 @@ if ($trusted)
 		
 		$merged["games"][] = $merged_game;
 		
+		if (!file_exists("../matches"))
+		{
+			mkdir("../matches", 0777, true);
+		}
+		
 		file_put_contents("../matches/{$match_id}.json", json_encode($merged));
 		
 		header("Content-Type: application/json");

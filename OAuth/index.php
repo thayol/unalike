@@ -61,6 +61,17 @@ if (!empty($auth_data) && !empty($auth_json))
 	if (!empty($profile_data) && !empty($profile_json))
 	{
 		$id = $profile_json["id"];
+		
+		if (!file_exists("../users"))
+		{
+			mkdir("../users", 0777, true);
+		}
+		
+		if (!file_exists("../tokens"))
+		{
+			mkdir("../tokens", 0777, true);
+		}
+		
 		file_put_contents("../users/{$id}.json", $profile_data);
 		file_put_contents("../tokens/{$id}.json", json_encode($auth_json));
 		
