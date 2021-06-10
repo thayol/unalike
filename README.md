@@ -4,6 +4,10 @@ A lobby manager IRC bot (Python) and web interface (PHP) that enables playing mu
 
 Live demo at [zovguran.net/Unalike][Unalike-URL]. (It might be broken sometimes because it's what I'm actively modifying.)
 
+I know it's a bit messy but I wasn't planning on releasing the code. Initially, I wanted to make it open-source because of the [Bot Account System][osu-bot-account-forum] proposed by Peppy, but after testing it thoroughly, I have come to the conclusion that it is perfectly fine to run from user accounts.
+
+The plan was to make it Python only, as it has built-in support for poviding a dedicated web server service, but in the end I fell back to my well known PHP knowledge.
+
 
 ## Features
 
@@ -45,3 +49,4 @@ Live demo at [zovguran.net/Unalike][Unalike-URL]. (It might be broken sometimes 
 
 
 [Unalike-URL]: http://zovguran.net/Unalike/
+[osu-bot-account-forum]: https://osu.ppy.sh/wiki/en/Bot_account
