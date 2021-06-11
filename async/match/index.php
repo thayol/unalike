@@ -16,6 +16,7 @@ $call_prefix = "";
 $call_suffix = "";
 
 $recent_count = 6;
+$max_history_time_sec = 86400;
 
 $selected_match = false;
 
@@ -69,6 +70,13 @@ else
 	natsort($all_matches);
 	$all_matches = array_reverse($all_matches);
 	$recent_matches = array_slice($all_matches, 0, $recent_count);
+	foreach ($recent_matches as $recent_key => $recent_file)
+	{
+		if ((time() - filemtime($recent_file)) > $max_history_time_sec)
+		{
+			unset($recent_matches[$recent_key]);
+		}
+	}
 
 	$link_to_file = false;
 
