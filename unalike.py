@@ -34,6 +34,9 @@ lobby_default_size = 1
 # checks per second (Hz) [a range between 0.5 and 4 is recommended, can be any arbitrary number]
 polling_rate = 2 # 2 = report to the web api every 0.5 seconds (also affects IRC ping)
 
+# the time after the script will exit itself
+global_shutdown_timer = 10 * 60 # in seconds (if it is too high, weird timeout issues start to appear)
+
 # this will be used in chat messages (can be anything, does not have to point to your Unalike)
 unalike_url = "https://zovguran.net/Unalike/"
 
@@ -59,7 +62,7 @@ encoding = "utf-8"
 buffer_size = 16384 # you might need to lower this. the bot should work with as low as 1024
 
 # set to True if you want to use the console to send custom commands
-console_input_allowed = True
+console_input_allowed = False
 
 # set to True if you want to see what the IRC bot is sending to Bancho
 send_command_feedback = False
@@ -79,6 +82,8 @@ bot_pass = ""
 
 lobby_default_pass = "unset"
 local_secret = "unset"
+
+current_shutdown_timer = 0
 
 # folder structure setup
 os.makedirs(lobbies_dir, exist_ok=True)
@@ -729,7 +734,9 @@ while running:
 		with open(report_file, "w") as outfile:
 			json.dump(temp_output, outfile)
 	
+	current_shutdown_timer += global_polling_rate
 	if lobbies_changed:
+		current_shutdown_timer = 0
 		lobbies_changed = False
 		all_ready = True
 		all_finished = True
@@ -824,6 +831,11 @@ while running:
 				temp_channel = input("Channel/User: ")
 				temp_message = input("Message: ")
 				irc_send_pm(temp_channel, temp_message)
+	
+	if current_shutdown_timer > global_shutdown_timer:
+		print("Shutting down due to inactivity.")
+		running = False
+		break
 
 print("")
 print("--- END ---")
