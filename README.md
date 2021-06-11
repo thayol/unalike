@@ -36,7 +36,7 @@ By the way, I'm [Thayol][thayol-osu-url], feel free to ask me any questions anyw
 ## Setup
 
 1. Clone the source code to a subfolder of your web server.
-2. Copy the files from "setup_help/" to the root of Unalike. Guide [here][setup-help-guide]
+2. Copy the files from "setup_help/" to the root of Unalike. Guide [here][setup-help-guide].
 3. Fill in the missing keys in the newly copied files.
 4. (Optional) Check the configuration section of unalike.py
 5. Set up a URL rewrite rule that makes "path/to/unalike/api/USERNAME/KEY/VALUE" point to "path/to/unalike/API/?username=USERNAME&KEY=VALUE" (You can just rewrite these calls manually if you want to, but using API parameters like this is very user friendly.)
@@ -74,6 +74,6 @@ By the way, I'm [Thayol][thayol-osu-url], feel free to ask me any questions anyw
 - If someone presses Escape early but they have played a map in the last round, they will receive a score with plus one point compared to the last run. (This is a bug in Bancho, which was last checked 2021-06-10)
 
 [Unalike-URL]: http://zovguran.net/Unalike/
-[setup-help-guide]: setup_help/README.md
+[setup-help-guide]: setup_help/
 [osu-bot-account-forum]: https://osu.ppy.sh/wiki/en/Bot_account
 [thayol-osu-url]: https://osu.ppy.sh/users/12416594
