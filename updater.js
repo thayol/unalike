@@ -132,6 +132,10 @@ function updateUnalikeDisplay(unalikeJson) {
 		if (unalikeJson.delay) {
 			newStatus += "</p><p>Current delay: " + unalikeJson.delay + " seconds between commands. (~" + unalikeJson.delay*4 + " seconds to create a lobby.)";
 		}
+		
+		if (unalikeJson.shutdownTimer) {
+			newStatus += "</p><p>If nothing happens, Unalike will shut down in " + unalikeJson.shutdownTimer + " seconds.";
+		}
 		// dynamicJsonElement = document.getElementById("dynamic-json");
 		// dynamicJsonElement.innerHTML = JSON.stringify(unalikeJson);
 		

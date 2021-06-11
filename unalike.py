@@ -723,6 +723,7 @@ while running:
 		temp_output["apiPlayer"] = api_player
 		temp_output["roundsPlayed"] = global_rounds_played
 		temp_output["timestamp"] = math.floor(time.time())
+		temp_output["shutdownTimer"] = math.floor(global_shutdown_timer - current_shutdown_timer)
 		temp_output["boot"] = boot_timestamp
 		temp_output["delay"] = global_irc_send_timeout
 		temp_output["maxLobbies"] = global_max_lobbies
