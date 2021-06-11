@@ -1,14 +1,14 @@
 # Unalike
 
-A lobby manager IRC bot (Python) and web interface (PHP) that enables playing multiplayer with friends on different difficulties.
+A lobby manager by [Thayol][thayol-osu-url] with an IRC bot (Python) and a web interface (PHP) that enables playing multiplayer with friends on different difficulties.
 
 Live demo at [zovguran.net/Unalike][Unalike-URL]. (It might be broken sometimes because it's what I'm actively modifying.)
 
-I know it's a bit messy but I wasn't planning on releasing the code. Initially, I wanted to make it open-source because of the [Bot Account System][osu-bot-account-forum] proposed by Peppy, but after testing it thoroughly, I have come to the conclusion that it is perfectly fine to run from user accounts.
+I know it's a bit messy but I wasn't planning on releasing the code. Initially, I wanted to make it open-source because of the [Bot Account System][osu-bot-account-forum] proposed by Peppy, but after testing it thoroughly, I have come to the conclusion that it is perfectly fine to run from user accounts. Take this as a proof-of-concept and use it as-is or base your own version on it.
 
 The plan was to make it Python only, as it has built-in support for poviding a dedicated web server service, but in the end I fell back to my well known PHP knowledge.
 
-By the way, I'm [Thayol][thayol-osu-url], feel free to ask me any questions anywhere.
+Even though I doubt this would be easy to develop without a complete rewrite, pull requests are welcome! Feel free to ask me any questions anywhere.
 
 
 ## Features

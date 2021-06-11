@@ -16,14 +16,14 @@ For the sake of readability, I'll list the basic steps here.
 ## osu! API Authentication
 
 - Copy `/setup_help/api_key.php` to `/api_key.php`
-- Change the $api_key variable's contents to your `API Key` from the [API Registration][osu-api-v1-url] page.
+- Change the `$api_key` variable's contents to your `API Key` from the [API Registration][osu-api-v1-url] page.
 - Register a new OAuth application in your [profile settings][osu-api-v2-url].
-- Change the $client_id, $client_secret, and $callback_uri to their given values respectively.
+- Change the `$client_id`, `$client_secret`, and `$callback_uri` to their given values respectively.
 
 ## Unalike Shared Local Secret For Anti-abuse
 
 - Copy `/setup_help/local_secret.php` to `/local_secret.php`
-- Change the $local_secret variable's contents to a secure and preferably long string of numbers and letters.
+- Change the `$local_secret` variable's contents to a secure and preferably long string of numbers and letters.
 
 *(Using symbols and special characters in the local secret is possible but discouraged.)*
 
