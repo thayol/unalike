@@ -13,8 +13,8 @@ from os import path
 # CONFIGURATION
 
 # location of the account files
-account_path = "account.php" # take a look at "setup_help/account_template.php"
-local_secret_path = "local_secret.php" # take a look at "setup_help/local_secret_template.php"
+account_path = "account.php" # take a look at "setup_help/account.php"
+local_secret_path = "local_secret.php" # take a look at "setup_help/local_secret.php"
 
 # how many seconds should be between commands
 global_irc_send_timeout = 4 # in seconds (3 didn't work sometimes, 7 should always work)

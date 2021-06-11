@@ -14,6 +14,9 @@ requests.json
 unalike.json
 users.json
 
+# Template unignore
+!setup_help/*
+
 # Files that are not appropriate for git
 created.txt
 description.txt
