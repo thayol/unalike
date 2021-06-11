@@ -35,7 +35,7 @@ lobby_default_size = 1
 polling_rate = 2 # 2 = report to the web api every 0.5 seconds (also affects IRC ping)
 
 # this will be used in chat messages (can be anything, does not have to point to your Unalike)
-unalike_url = "http://zovguran.net/Unalike/"
+unalike_url = "https://zovguran.net/Unalike/"
 
 # change it to match your location of the Unalike API (does not have to be local)
 unalike_api = "http://localhost:80/Unalike/API"

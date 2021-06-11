@@ -1,6 +1,5 @@
 <?php
 session_start();
-// http://zovguran.net/Unalike/
 $authenticated = false;
 include "api_key.php";
 

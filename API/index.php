@@ -1,5 +1,4 @@
 <?php
-// http://zovguran.net/Unalike/API
 include "../api_key.php";
 
 if (!empty($_GET["username"]) || !empty($_GET["userid"]))

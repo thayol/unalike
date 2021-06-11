@@ -1,9 +1,5 @@
 <?php
 session_start();
-// http://zovguran.net/Unalike/action/?(a|b|c)
-
-// header("Content-Type: application/json");
-// echo json_encode($_GET);
 
 if (!empty($_SESSION["unalike-osu-id"]) && !empty($_SESSION["unalike-osu-username"]) && !empty($_SESSION["unalike-granted"]) && $_SESSION["unalike-granted"] === true)
 {

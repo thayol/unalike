@@ -1,6 +1,5 @@
 <?php
 session_start();
-// http://zovguran.net/Unalike/OAuth/
 
 if (!empty($_GET["error"]) && $_GET["error"] == "access_denied")
 {

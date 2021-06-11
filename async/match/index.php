@@ -1,6 +1,5 @@
 <?php
 session_start();
-// http://zovguran.net/Unalike/async/
 
 $api_url = "http://localhost:80/Unalike/API";
 

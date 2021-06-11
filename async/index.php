@@ -1,6 +1,5 @@
 <?php
 session_start();
-// http://zovguran.net/Unalike/async/
 
 $unalike = json_decode(file_get_contents("../unalike.json"), true);
 // if (!empty($unalike))

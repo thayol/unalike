@@ -1,6 +1,5 @@
 <?php
 session_start();
-// http://zovguran.net/Unalike/async/
 
 $relative_prefix = "../../lobbies/";
 $original_suffix = ".json";

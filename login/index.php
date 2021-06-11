@@ -1,5 +1,4 @@
 <?php
-// http://zovguran.net/Unalike/login/
 include "../api_key.php";
 $scope = implode("+", [ "identify", "public" ]);
 
