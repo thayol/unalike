@@ -36,16 +36,16 @@ Even though I doubt this would be easy to develop without a complete rewrite, pu
 ## Setup
 
 1. Clone the source code to a subfolder of your web server.
-2. Copy the files from `setup_help/` to the root of Unalike. Guide [here][setup-help-guide].
-3. Fill in the missing keys in the newly copied files.
-4. (Optional) Check the configuration section of unalike.py
-5. Set up a URL rewrite rule that makes `path/to/unalike/api/USERNAME/KEY/VALUE` point to `path/to/unalike/API/?username=USERNAME&KEY=VALUE` (You can just rewrite these calls manually if you want to, but using API parameters like this is very user friendly.)
+1. Copy the files from `setup_help/` to the root of Unalike. Guide [here][setup-help-guide].
+1. Fill in the missing keys in the newly copied files.
+1. (Optional) Check the configuration section of unalike.py
+1. Set up a URL rewrite rule that makes `path/to/unalike/api/USERNAME/KEY/VALUE` point to `path/to/unalike/API/?username=USERNAME&KEY=VALUE` (You can just rewrite these calls manually if you want to, but using API parameters like this is very user friendly.)
 
 
 ## Start
 
 1. Start start.ps1 with powershell.
-2. Start your web service if it is stopped.
+1. Start your web service if it is stopped.
 
 *(If it's your first time running start.ps1, the service will start automatically.)*
 
@@ -53,15 +53,15 @@ Even though I doubt this would be easy to develop without a complete rewrite, pu
 ## Usage
 
 1. Open the web page you deployed in a web browser.
-2. Log in with you osu! account.
-3. Press the "Start" button if Unalike is offline.
-4. Press the "New lobby" button.
-5. Make sure your osu! client is open and connected to Bancho.
-6. Press the "Invite" button next of the newly created lobby.
-7. Press F9 in your osu! client to open Bancho, then click the invite link received.
-8. Wait for Unalike to give you the Host.
-9. Pick a map, then ready up to start playing.
-10. After playing, don't forget to press the "Shut down" button to save resources.
+1. Log in with you osu! account.
+1. Press the "Start" button if Unalike is offline.
+1. Press the "New lobby" button.
+1. Make sure your osu! client is open and connected to Bancho.
+1. Press the "Invite" button next of the newly created lobby.
+1. Press F9 in your osu! client to open Bancho, then click the invite link received.
+1. Wait for Unalike to give you the Host.
+1. Pick a map, then ready up to start playing.
+1. After playing, don't forget to press the "Shut down" button to save resources.
 
 *(Optionally, you can replace step six with pressing the "Send invites" button.)*
 
