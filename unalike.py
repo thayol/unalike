@@ -7,7 +7,7 @@ import random
 import json
 import math
 import msvcrt
-import os.path
+import os
 from os import path
 
 # CONFIGURATION
@@ -59,7 +59,7 @@ encoding = "utf-8"
 buffer_size = 16384 # you might need to lower this. the bot should work with as low as 1024
 
 # set to True if you want to use the console to send custom commands
-console_input_allowed = False
+console_input_allowed = True
 
 # set to True if you want to see what the IRC bot is sending to Bancho
 send_command_feedback = False
@@ -159,7 +159,7 @@ def irc_send_links(recipient, channel_id=False):
 	temp_lobbies = []
 	
 	counter = 1
-	if channel_id != False and channel_id in managed_lobbies:
+	if channel_id is not False and channel_id in managed_lobbies:
 		temp_lobbies.append("[" + "osump://" + str(managed_lobbies[channel_id]["lobby"]) + "/" + str(managed_lobbies[channel_id]["password"]) + " " + str(channel_id) + "]")
 		counter += 1
 	else:
@@ -198,7 +198,7 @@ def irc_sync_lobbies_to(originating_channel, beatmapset_id, beatmap_id):
 				if lobby != originating_channel and "beatmapset" in managed_lobbies[lobby] and managed_lobbies[lobby]["beatmapset"] != beatmapset_id:
 					skipSync = False
 					if "desynced" in managed_lobbies[lobby]:
-						if managed_lobbies[lobby]["desynced"] == True:
+						if managed_lobbies[lobby]["desynced"] is True:
 							skipSync = True
 					
 					if not skipSync:
@@ -253,7 +253,7 @@ def irc_start_managing(lobby_channel, lobby_name=False, join=False):
 		managed_lobbies[lobby_channel] = {}
 	
 	managed_lobbies[lobby_channel]["channel"] = lobby_channel
-	if lobby_name != False:
+	if lobby_name is not False:
 		managed_lobbies[lobby_channel]["name"] = lobby_name
 	if join:
 		managed_lobbies[lobby_channel]["skipModeSetup"] = True
@@ -303,7 +303,7 @@ def irc_to_Command(lines):
 				cmd.channel = expl[args_start+1]
 			temp_msg = " ".join(expl[(args_start+1):])
 			if len(temp_msg) > 1:
-				cmd.message = temp_msg[1:].replace(b'\x01ACTION'.decode(encoding), "[STATUS]").replace(b'\x01'.decode(encoding), "");
+				cmd.message = temp_msg[1:].replace(b'\x01ACTION'.decode(encoding), "[STATUS]").replace(b'\x01'.decode(encoding), "")
 		
 		cmds.append(cmd)
 	
@@ -332,8 +332,8 @@ def irc_read():
 	
 	if text == "":
 		return []
-	else:
-		return [x for x in text.split("\n") if len(x.strip()) > 0]
+	
+	return [x for x in text.split("\n") if len(x.strip()) > 0]
 
 def reset_lobby_states():
 	global global_playing, managed_lobbies, lobbies_changed
@@ -417,11 +417,11 @@ while running:
 	for request in request_json:
 		if "type" in request:
 			if request["type"] == "invite" and "target" in request:
-				filter = False;
+				the_filter = False
 				if "filter" in request:
-					filter = fix_mp_prefix(request["filter"])
+					the_filter = fix_mp_prefix(request["filter"])
 				
-				irc_send_links(request["target"].replace(" ", "_"), filter)
+				irc_send_links(request["target"].replace(" ", "_"), the_filter)
 			elif request["type"] == "new_lobby":
 				if len(managed_lobbies) < global_max_lobbies:
 					lobby_name = "Unalike"
@@ -615,7 +615,7 @@ while running:
 				
 				skipSync = False
 				if "desynced" in managed_lobbies[lobby_channel]:
-					if managed_lobbies[lobby_channel]["desynced"] == True:
+					if managed_lobbies[lobby_channel]["desynced"] is True:
 						skipSync = True
 				
 				if skipSync:
@@ -717,14 +717,14 @@ while running:
 		temp_output["playing"] = global_playing
 		temp_output["apiPlayer"] = api_player
 		temp_output["roundsPlayed"] = global_rounds_played
-		temp_output["timestamp"] = math.floor(time.time());
-		temp_output["boot"] = boot_timestamp;
-		temp_output["delay"] = global_irc_send_timeout;
-		temp_output["maxLobbies"] = global_max_lobbies;
-		temp_output["current_mapset"] = current_mapset;
+		temp_output["timestamp"] = math.floor(time.time())
+		temp_output["boot"] = boot_timestamp
+		temp_output["delay"] = global_irc_send_timeout
+		temp_output["maxLobbies"] = global_max_lobbies
+		temp_output["current_mapset"] = current_mapset
 		
 		# uncomment to expose commands to the public
-		# temp_output["command_queue"] = global_irc_send_queue;
+		# temp_output["command_queue"] = global_irc_send_queue
 		
 		with open(report_file, "w") as outfile:
 			json.dump(temp_output, outfile)
@@ -757,9 +757,9 @@ while running:
 						irc_send_pm(channel_id, "!mp set 0 1 " + str(lobby_default_size))
 					
 					lobbies_changed = True
-				if managed_lobbies[channel_id]["ready"] == False:
+				if managed_lobbies[channel_id]["ready"] is False:
 					all_ready = False
-				if managed_lobbies[channel_id]["playing"] == True:
+				if managed_lobbies[channel_id]["playing"] is True:
 					all_finished = False
 				with open(lobbies_dir + managed_lobbies[channel_id]["match"] + ".json", "w") as json_file:
 					json.dump(managed_lobbies[channel_id], json_file)
@@ -777,7 +777,7 @@ while running:
 						if "roundsPlayed" in managed_lobbies[channel_id] and "match" in managed_lobbies[channel_id]:
 							request_matches.append(str(managed_lobbies[channel_id]["match"]) + ",-1")
 					
-					composer_url = unalike_composer + "secret=" + local_secret + "&source=" + ";".join(request_matches) + "&beatmapset=" + str(current_mapset);
+					composer_url = unalike_composer + "secret=" + local_secret + "&source=" + ";".join(request_matches) + "&beatmapset=" + str(current_mapset)
 					
 					print("Finished. Request forwarded to: Unalike Composer")
 					
