@@ -20,7 +20,7 @@ By the way, I'm [Thayol][thayol-osu-url], feel free to ask me any questions anyw
 - Create osu! lobbies using a custom web interface.
 - Send invites to users using the web interface.
 - Synchronize the mapset across the lobbies.
-- (Optinally) Write ".desync" in #multiplayer to turn off syncing temporarily.
+- (Optinally) Write `.desync` in `#multiplayer` to turn off syncing temporarily.
 - Display the results based on accuracy. (So that everyone has equal chance of winning.)
 - Supports all game modes, and the score calculation is fully\* independent of the lobby settings.
 
@@ -36,10 +36,10 @@ By the way, I'm [Thayol][thayol-osu-url], feel free to ask me any questions anyw
 ## Setup
 
 1. Clone the source code to a subfolder of your web server.
-2. Copy the files from "setup_help/" to the root of Unalike. Guide [here][setup-help-guide].
+2. Copy the files from `setup_help/` to the root of Unalike. Guide [here][setup-help-guide].
 3. Fill in the missing keys in the newly copied files.
 4. (Optional) Check the configuration section of unalike.py
-5. Set up a URL rewrite rule that makes "path/to/unalike/api/USERNAME/KEY/VALUE" point to "path/to/unalike/API/?username=USERNAME&KEY=VALUE" (You can just rewrite these calls manually if you want to, but using API parameters like this is very user friendly.)
+5. Set up a URL rewrite rule that makes `path/to/unalike/api/USERNAME/KEY/VALUE` point to `path/to/unalike/API/?username=USERNAME&KEY=VALUE` (You can just rewrite these calls manually if you want to, but using API parameters like this is very user friendly.)
 
 
 ## Start
