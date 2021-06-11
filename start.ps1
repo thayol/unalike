@@ -13,6 +13,7 @@ while($true)
 	else
 	{
 		Write-Host "[Unalike] Starting IRC bot..."
+		Write-Host "Request: $content"
 		Set-Content -Path $file -Value "{}"
 		$flags = "unalike.py"
 		$flagArray = $flags -split " "
