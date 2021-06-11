@@ -187,10 +187,10 @@ if (isset($_GET["render"]))
 		{
 			$status = '<span class="positive-color">FC</span>';
 		}
-		else
-		{
+		// else
+		// {
 			// $status = '<span class="positive-color">PASS</span>';
-		}
+		// }
 		
 		$mode_text = "?";
 		if ($score["game"]["mode"] == "osu")

@@ -450,9 +450,9 @@ while running:
 			elif request["type"] == "register" and "target" in request:
 				print("Registering lobby: " + str(request["target"]))
 				irc_start_managing(request["target"], join=True)
-			elif request["type"] == "shutdown":
-				running = False
-				break
+			# elif request["type"] == "shutdown":
+				# running = False
+				# break
 				
 	for line in lines:
 		if line.cmd in [ "001" ]:

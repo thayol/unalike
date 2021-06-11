@@ -25,10 +25,7 @@ if (!empty($_GET["username"]) || !empty($_GET["userid"]))
 		$id = $_GET["userid"];
 	}
 	
-	if ($id == "~Unalike")
-	{
-	}
-	else if ($id < 0)
+	else if ($id != "~Unalike" && $id < 0)
 	{
 		echo "Unauthorized";
 		exit(0);
@@ -216,7 +213,7 @@ if (!empty($_GET["username"]) || !empty($_GET["userid"]))
 				}
 				else if ($diffs_redirect)
 				{
-					header("Location: " . "../f/" . strval($beatmapset));
+					header("Location: ../f/" . strval($beatmapset));
 				}
 			}
 		}
