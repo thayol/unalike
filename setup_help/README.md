@@ -16,7 +16,7 @@ For the sake of readability, I'll list the basic steps here.
 ## osu! API Authentication
 
 - Copy `/setup_help/api_key.php` to `/api_key.php`
-- Change the `$api_key` variable's contents to your `API Key` from the [API Registration][osu-api-v1-url] page.
+- Change the `$api_key` variable's contents to your "API Key" from the [API Registration][osu-api-v1-url] page.
 - Register a new OAuth application in your [profile settings][osu-api-v2-url].
 - Change the `$client_id`, `$client_secret`, and `$callback_uri` to their given values respectively.
 
