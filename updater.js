@@ -136,6 +136,10 @@ function updateUnalikeDisplay(unalikeJson) {
 		if (unalikeJson.shutdownTimer) {
 			newStatus += "</p><p>If nothing happens, Unalike will shut down in " + unalikeJson.shutdownTimer + " seconds.";
 		}
+		
+		if (unalikeJson.sessionAdmin) {
+			newStatus += "</p><p>" + unalikeJson.sessionAdmin + " was the first to interact with Unalike. Only he/she can shut it down on command.";
+		}
 		// dynamicJsonElement = document.getElementById("dynamic-json");
 		// dynamicJsonElement.innerHTML = JSON.stringify(unalikeJson);
 		

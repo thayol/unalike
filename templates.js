@@ -19,7 +19,7 @@ var buttonsIfOffline = `
 	`;
 
 var buttonsIfOnline = `
-	<button onclick="hiddenFunctionClick(this, 'action/?shutdown', 3)" class="button-osu button-osu-management button-negative" disabled>
+	<button onclick="hiddenFunctionClick(this, 'action/?shutdown', 3)" class="button-osu button-osu-management button-negative">
 		<div class="button-symbol">🔌</div>
 		<div class="button-label">Shut down</div>
 	</button>

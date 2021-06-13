@@ -85,6 +85,8 @@ local_secret = "unset"
 
 current_shutdown_timer = 0
 
+global_session_admin = ""
+
 # folder structure setup
 os.makedirs(lobbies_dir, exist_ok=True)
 
@@ -421,6 +423,9 @@ while running:
 
 	for request in request_json:
 		if "type" in request:
+			if global_session_admin == "" and "issuer" in request and "username" in request["issuer"]:
+				global_session_admin = request["issuer"]["username"]
+			
 			if request["type"] == "invite" and "target" in request:
 				the_filter = False
 				if "filter" in request:
@@ -455,9 +460,11 @@ while running:
 			elif request["type"] == "register" and "target" in request:
 				print("Registering lobby: " + str(request["target"]))
 				irc_start_managing(request["target"], join=True)
-			# elif request["type"] == "shutdown":
-				# running = False
-				# break
+			elif request["type"] == "shutdown":
+				if global_session_admin != "" and "issuer" in request and "username" in request["issuer"] and global_session_admin == request["issuer"]["username"]:
+					running = False
+					break
+				
 				
 	for line in lines:
 		if line.cmd in [ "001" ]:
@@ -727,7 +734,8 @@ while running:
 		temp_output["boot"] = boot_timestamp
 		temp_output["delay"] = global_irc_send_timeout
 		temp_output["maxLobbies"] = global_max_lobbies
-		temp_output["current_mapset"] = current_mapset
+		temp_output["currentMapset"] = current_mapset
+		temp_output["sessionAdmin"] = global_session_admin
 		
 		# uncomment to expose commands to the public
 		# temp_output["command_queue"] = global_irc_send_queue
