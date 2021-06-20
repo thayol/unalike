@@ -246,7 +246,7 @@ function updateUnalikeDisplay(unalikeJson) {
 					if (lobby.desynced) {
 						stateSymbol = "🔀 (Desynced)";
 					}
-					else if (lobby.beatmapset > 0 && lobby.beatmapset != unalikeJson.current_mapset)
+					else if (lobby.beatmapset > 0 && lobby.beatmapset != unalikeJson.currentMapset)
 					{
 						stateSymbol = "🆘 (Desynced)";
 					}
